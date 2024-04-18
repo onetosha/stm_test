@@ -22,7 +22,7 @@
                 </TransformGroup>
             </Canvas.RenderTransform>
         </Canvas>
-        <Button x:Name="btnStartStopAnimation" Content="Запустить анимацию" HorizontalAlignment="Left" Margin="616,364,0,0" VerticalAlignment="Top" Height="20" Width="160" Click="btnStartStopAnimation_Click"/>
+        <Button x:Name="btnStartStopAnimation" Content="Запустить анимацию" HorizontalAlignment="Right" Margin="0,364,10,0" VerticalAlignment="Top" Height="20" Width="160" Click="btnStartStopAnimation_Click"/>
         <Slider x:Name="radiusSlider" Minimum="10" Maximum="50" Value="25" HorizontalAlignment="Left" Margin="14,389,0,0" VerticalAlignment="Top" Width="120" IsSnapToTickEnabled="True" TickFrequency="1"/>
         <Label x:Name="lblRadius" Content="Радиус:" HorizontalAlignment="Left" Margin="14,358,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblSlider" Content="{Binding ElementName=radiusSlider, Path=Value}" HorizontalAlignment="Left" Margin="139,385,0,0" VerticalAlignment="Top"/>
@@ -43,7 +43,7 @@
                 ValueChanged="Slider_ValueChanged"/>
         <Label x:Name="lblBlueValue" Content="{Binding Value, ElementName=blueSlider}" HorizontalAlignment="Left" Margin="384,447,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblB" Content="Blue" HorizontalAlignment="Left" Margin="186,447,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ClearBalls" Content="Очистить" HorizontalAlignment="Left" Margin="616,395,0,0" VerticalAlignment="Top" Height="20" Width="160" Click="btnClear"/>
+        <Button x:Name="ClearBalls" Content="Очистить" HorizontalAlignment="Right" Margin="0,395,10,0" VerticalAlignment="Top" Height="20" Width="160" Click="btnClear"/>
 
 
     </Grid>
