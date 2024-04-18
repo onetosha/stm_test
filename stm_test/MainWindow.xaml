@@ -6,11 +6,12 @@
         mc:Ignorable="d"
         Title="Bouncing Balls" Height="536" Width="800">
     <Window.Resources>
-        <SolidColorBrush x:Key="magicBrush" Color="Red"/>
+        <SolidColorBrush x:Key="magicBrush"  Color="Red"/>
     </Window.Resources>
     <Grid Margin="0,0,0,10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" MinHeight="401"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Canvas x:Name="canvas" Background="LightGray" MouseDown="canvas_MouseDown" Margin="0,0,0,148" RenderTransformOrigin="0.5,0.5">
             <Canvas.RenderTransform>
@@ -22,28 +23,29 @@
                 </TransformGroup>
             </Canvas.RenderTransform>
         </Canvas>
-        <Button x:Name="btnStartStopAnimation" Content="Запустить анимацию" HorizontalAlignment="Right" Margin="0,364,10,0" VerticalAlignment="Top" Height="20" Width="160" Click="btnStartStopAnimation_Click"/>
-        <Slider x:Name="radiusSlider" Minimum="10" Maximum="50" Value="25" HorizontalAlignment="Left" Margin="14,389,0,0" VerticalAlignment="Top" Width="120" IsSnapToTickEnabled="True" TickFrequency="1"/>
-        <Label x:Name="lblRadius" Content="Радиус:" HorizontalAlignment="Left" Margin="14,358,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblSlider" Content="{Binding ElementName=radiusSlider, Path=Value}" HorizontalAlignment="Left" Margin="139,385,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblColor" Content="Цвет:" HorizontalAlignment="Left" Margin="186,361,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnStartStopAnimation" Content="Запустить анимацию" HorizontalAlignment="Right" Margin="0,0,10,123" VerticalAlignment="Bottom" Height="20" Width="160" Click="btnStartStopAnimation_Click"/>
+        <Button x:Name="ClearBalls" Content="Очистить" HorizontalAlignment="Right" Margin="0,0,10,98" VerticalAlignment="Bottom" Height="20" Width="160" Click="btnClear"/>
+        <Slider x:Name="radiusSlider" Minimum="10" Maximum="50" Value="25" HorizontalAlignment="Left" Margin="14,0,0,103" VerticalAlignment="Bottom" Width="120" IsSnapToTickEnabled="True" TickFrequency="1"/>
+        <Label x:Name="lblRadius" Content="Радиус:" HorizontalAlignment="Left" Margin="14,0,0,123" VerticalAlignment="Bottom"/>
+        <Label x:Name="lblSlider" Content="{Binding ElementName=radiusSlider, Path=Value}" HorizontalAlignment="Left" Margin="134,0,0,99" VerticalAlignment="Bottom"/>
+        <Label x:Name="lblColor" Content="Цвет:" HorizontalAlignment="Left" Margin="183,0,0,123" VerticalAlignment="Bottom"/>
 
 
-        <Ellipse Fill="{StaticResource magicBrush}" Height="59" Width="62" Margin="429,410,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Ellipse Fill="{StaticResource magicBrush}" Height="59" Width="62" Margin="418,0,0,51" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 
-        <Slider x:Name="redSlider" Minimum="0" Maximum="255" Value="255" HorizontalAlignment="Left" Margin="229,389,0,0" VerticalAlignment="Top" Width="150" IsSnapToTickEnabled="True" TickFrequency="1" 
+        <Slider x:Name="redSlider" Minimum="0" Maximum="255" Value="255" HorizontalAlignment="Left" Margin="229,0,0,103" VerticalAlignment="Bottom" Width="150" IsSnapToTickEnabled="True" TickFrequency="1" 
                 ValueChanged="Slider_ValueChanged"/>
-        <Label x:Name="lblRedValue" Content="{Binding Value, ElementName=redSlider}" HorizontalAlignment="Left" Margin="384,385,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblR" Content="Red" HorizontalAlignment="Left" Margin="186,385,0,0" VerticalAlignment="Top"/>
-        <Slider x:Name="greenSlider" Minimum="0" Maximum="255" Value="0" HorizontalAlignment="Left" Margin="229,420,0,0" VerticalAlignment="Top" Width="150" IsSnapToTickEnabled="True" TickFrequency="1"
+        <Label x:Name="lblRedValue" Content="{Binding Value, ElementName=redSlider}" HorizontalAlignment="Left" Margin="384,0,0,98" VerticalAlignment="Bottom"/>
+        <Label x:Name="lblR" Content="Red" HorizontalAlignment="Left" Margin="186,0,0,97" VerticalAlignment="Bottom"/>
+        <Slider x:Name="greenSlider" Minimum="0" Maximum="255" Value="0" HorizontalAlignment="Left" Margin="233,0,0,72" VerticalAlignment="Bottom" Width="150" IsSnapToTickEnabled="True" TickFrequency="1"
                 ValueChanged="Slider_ValueChanged"/>
-        <Label x:Name="lblGreenValue" Content="{Binding Value, ElementName=greenSlider}" HorizontalAlignment="Left" Margin="384,416,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblG" Content="Green" HorizontalAlignment="Left" Margin="186,416,0,0" VerticalAlignment="Top"/>
-        <Slider x:Name="blueSlider" Minimum="0" Maximum="255" Value="0" HorizontalAlignment="Left" Margin="229,451,0,0" VerticalAlignment="Top" Width="150" IsSnapToTickEnabled="True" TickFrequency="1"
+        <Label x:Name="lblGreenValue" Content="{Binding Value, ElementName=greenSlider}" HorizontalAlignment="Left" Margin="384,0,0,72" VerticalAlignment="Bottom"/>
+        <Label x:Name="lblG" Content="Green" HorizontalAlignment="Left" Margin="186,0,0,68" VerticalAlignment="Bottom"/>
+        <Slider x:Name="blueSlider" Minimum="0" Maximum="255" Value="0" HorizontalAlignment="Left" Margin="229,0,0,41" VerticalAlignment="Bottom" Width="150" IsSnapToTickEnabled="True" TickFrequency="1"
                 ValueChanged="Slider_ValueChanged"/>
-        <Label x:Name="lblBlueValue" Content="{Binding Value, ElementName=blueSlider}" HorizontalAlignment="Left" Margin="384,447,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblB" Content="Blue" HorizontalAlignment="Left" Margin="186,447,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ClearBalls" Content="Очистить" HorizontalAlignment="Right" Margin="0,395,10,0" VerticalAlignment="Top" Height="20" Width="160" Click="btnClear"/>
+        <Label x:Name="lblBlueValue" Content="{Binding Value, ElementName=blueSlider}" HorizontalAlignment="Left" Margin="384,0,0,37" VerticalAlignment="Bottom"/>
+        <Label x:Name="lblB" Content="Blue" HorizontalAlignment="Left" Margin="186,0,0,33" VerticalAlignment="Bottom"/>
+ 
 
 
     </Grid>
