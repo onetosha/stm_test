@@ -59,11 +59,6 @@ namespace stm_test
             return position.X >= leftLimit && position.X <= rightLimit && position.Y >= topLimit && position.Y <= bottomLimit;
         }
 
-        private void btnStopAnimation_Click(object sender, RoutedEventArgs e)
-        {
-            animationTimer.Stop();
-        }
-
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if ((redSlider != null) && (greenSlider != null) && (blueSlider != null))
